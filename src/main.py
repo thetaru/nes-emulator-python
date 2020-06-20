@@ -322,18 +322,14 @@ class cpu:
             print ("Mapper not available yet")
             exit(1)
 
-        i=0
-        maxdata = len(self.cart.prgRomData)
-        while i < maxdata:
+        for i in range(len(self.cart.prgRomData)):
             v = self.cart.prgRomData[i]
             self.dmaRAMWrite(i + 0x8000, v)
             if self.cart.prgRomCount == 1:
                 self.dmaRAMWrite(i + 0xC000, v)
-            i+=1
-        i=0
-        while i < 0x20:
+
+        for i in range(0x20):
             self.dmaRAMWrite(i + 0x4000, 0xFF)
-            i+=1
 
     def doNMI(self):
         self.pushStack((self.registers['PC'] >> 8) & 0xFF)
@@ -769,11 +765,9 @@ class ppu:
     def writeSprRamDMA(self, value):
         address = value * 0x100
 
-        i=0
-        while i < 256:
+        for i in range(256):
             self.dmaSPRRAMWrite(i, self.cpu.dmaRAMRead(address))
             address += 1
-            i+=1
 
     def readStatusFlag(self):
         value = 0
