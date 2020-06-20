@@ -7,3 +7,6 @@ Requirement: Pygame-1.9.6
 
 ## 実行方法
 $ python main.py \<rom-path\>
+
+## TODO
+PPU実装
