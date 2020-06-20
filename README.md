@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # nes emulator
 
 ## 実行確認環境
@@ -7,3 +8,6 @@ Requirement: Pygame-1.9.6
 
 ## 実行方法
 $ python main.py <rom-path>
+=======
+# nes-emulator-python
+>>>>>>> origin/master
